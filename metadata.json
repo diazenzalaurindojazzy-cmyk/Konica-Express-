@@ -1,0 +1,7 @@
+{
+  "name": "Konica Express",
+  "description": "Crie currículos profissionais, convites, cartões de visita e digitalize documentos com a Konica Express. Ferramentas digitais com IA para Angola, focadas na produtividade e design de qualidade.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

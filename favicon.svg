@@ -1,0 +1,13 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="256" height="256" rx="48" fill="#F3F4F6"/>
+    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="end"
+          font-family="Inter, sans-serif" font-size="160" font-weight="bold"
+          fill="#2563EB" dx="-8">
+        K
+    </text>
+    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="start"
+          font-family="Inter, sans-serif" font-size="160" font-weight="bold"
+          fill="#F59E0B" dx="8">
+        E
+    </text>
+</svg>
