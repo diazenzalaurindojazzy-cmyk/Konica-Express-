@@ -449,17 +449,27 @@ const DocumentGenerator: React.FC<DocumentGeneratorProps> = ({ onNavigateToServi
                  <Accordion title="Carregar e Editar o Seu Próprio Documento" defaultOpen={false}>
                     <div className="p-4 sm:p-6 bg-gray-50/70">
                         <p className="text-gray-600 mt-2 mb-4">
-                            Visualize, anote, preencha e assine modelos,formularios,requerimentos e outros  ficheiros PDF ou Word (.docx) diretamente na nossa aplicação, com a tecnologia da Adobe.
+                            Visualize, anote, preencha e assine modelos,formularios,requerimentos e outros ficheiros PDF ou Word (.docx) diretamente na nossa aplicação, com a tecnologia da Adobe. Esta função está em desenvolvimento.
                         </p>
                         <div className="text-center">
-                            <button
-                                onClick={() => fileInputRef.current?.click()}
-                                disabled={isLoading}
-                                className="w-full max-w-md inline-flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors disabled:bg-gray-400 disabled:cursor-wait"
-                            >
-                                {isLoading ? <SpinnerIcon className="w-5 h-5" /> : <UploadIcon className="w-5 h-5" />}
-                                {isLoading ? 'A processar...' : 'Carregar Documento (PDF/Word)'}
-                            </button>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                                <button
+                                    onClick={() => fileInputRef.current?.click()}
+                                    disabled={isLoading}
+                                    className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors disabled:bg-gray-400 disabled:cursor-wait"
+                                >
+                                    {isLoading ? <SpinnerIcon className="w-5 h-5" /> : <UploadIcon className="w-5 h-5" />}
+                                    {isLoading ? 'A processar...' : 'Carregar Documento (PDF/Word)'}
+                                </button>
+                                <a 
+                                    href="https://www.paypal.com/ncp/payment/YYSYG42XLHRR6" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-amber-500 to-yellow-400 text-white font-semibold rounded-md shadow-md hover:from-amber-600 hover:to-yellow-500 transition-all transform hover:scale-[1.02]"
+                                >
+                                    ✨ Tornar-se Patrocinador (PayPal)
+                                </a>
+                            </div>
                         </div>
                         <input type="file" ref={fileInputRef} onChange={handleAdobeFileUpload} className="hidden" accept=".pdf,.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
                     </div>

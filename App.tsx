@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import ResumeBuilder from './components/ResumeBuilder';
 import DocumentScanner from './components/DocumentScanner';
-// FIX: Explicitly specify the file extension to resolve casing ambiguity with a deprecated file.
-import InvitationCreator from './components/InvitationCreator.tsx';
+// FIX: Use lowercase filename to resolve casing ambiguity with a deprecated file.
+import InvitationCreator from './components/invitationCreator.tsx';
 import BusinessCardCreator from './components/BusinessCardCreator';
 import PassCreator from './components/PassCreator';
 import PhotoStudio from './components/PhotoEnhancer';
