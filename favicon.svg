@@ -1,13 +1,31 @@
 <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="256" height="256" rx="48" fill="#F3F4F6"/>
-    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="end"
-          font-family="Inter, sans-serif" font-size="160" font-weight="bold"
-          fill="#2563EB" dx="-8">
+    <rect width="256" height="256" rx="48" fill="white"/>
+    
+    <g>
+        <!-- Violet -->
+        <path d="M 28 140 A 100 100 0 0 1 228 140 L 218 140 A 90 90 0 0 0 38 140 Z" fill="#8B5CF6"/>
+        <!-- Blue -->
+        <path d="M 38 140 A 90 90 0 0 1 218 140 L 208 140 A 80 80 0 0 0 48 140 Z" fill="#3B82F6"/>
+        <!-- Green -->
+        <path d="M 48 140 A 80 80 0 0 1 208 140 L 198 140 A 70 70 0 0 0 58 140 Z" fill="#22C55E"/>
+        <!-- Yellow -->
+        <path d="M 58 140 A 70 70 0 0 1 198 140 L 188 140 A 60 60 0 0 0 68 140 Z" fill="#FBBF24"/>
+        <!-- Orange -->
+        <path d="M 68 140 A 60 60 0 0 1 188 140 L 178 140 A 50 50 0 0 0 78 140 Z" fill="#F97316"/>
+        <!-- Red -->
+        <path d="M 78 140 A 50 50 0 0 1 178 140 L 168 140 A 40 40 0 0 0 88 140 Z" fill="#EF4444"/>
+    </g>
+    
+    <text x="50%" y="72%" dominant-baseline="middle" text-anchor="end"
+          font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+          font-size="112" font-weight="bold"
+          fill="#3B82F6" dx="-6">
         K
     </text>
-    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="start"
-          font-family="Inter, sans-serif" font-size="160" font-weight="bold"
-          fill="#F59E0B" dx="8">
+    <text x="50%" y="72%" dominant-baseline="middle" text-anchor="start"
+          font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+          font-size="112" font-weight="bold"
+          fill="#FBBF24" dx="6">
         E
     </text>
 </svg>
