@@ -1,5 +1,6 @@
 
 import React, { useState, useMemo } from 'react';
+import LandingPage from './components/LandingPage';
 import ResumeBuilder from './components/ResumeBuilder';
 import DocumentScanner from './components/DocumentScanner';
 import InvitationCreator from './components/InvitationCreator';
@@ -16,7 +17,7 @@ import SuccessMessage from './components/SuccessMessage';
 import FeedbackModal from './components/FeedbackModal';
 
 
-export type Service = 'resume' | 'scanner' | 'invitation' | 'businessCard' | 'pass' | 'photoStudio' | 'other' | 'documents' | 'monetization';
+export type Service = 'landing' | 'resume' | 'scanner' | 'invitation' | 'businessCard' | 'pass' | 'photoStudio' | 'other' | 'documents' | 'monetization';
 
 const HamburgerIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -25,6 +26,7 @@ const HamburgerIcon: React.FC<{ className?: string }> = ({ className }) => (
 );
 
 const navItems = [
+    { id: 'landing', name: 'Página Inicial', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
     { id: 'resume', name: 'Construtor de Currículos', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
     { id: 'scanner', name: 'Scannear Documentos', icon: 'M3 8V7C3 5.34315 4.34315 4 6 4H8M3 8V17C3 18.6569 4.34315 20 6 20H18C19.6569 20 21 18.6569 21 17V7C21 5.34315 19.6569 4 18 4H16M3 8L7.5 12.5M21 8L16.5 12.5M12 16H12.01' },
     { id: 'documents', name: 'Fazer Documentos', icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z' },
@@ -82,6 +84,14 @@ const CreditStatus: React.FC<{ activeService: Service }> = ({ activeService }) =
                 textColor: 'text-blue-700',
             };
         }
+        if (activeService === 'landing' || activeService === 'monetization') {
+             return {
+                percentage: 0,
+                text: 'Bem-vindo!',
+                barColor: 'bg-gray-200',
+                textColor: 'text-gray-600',
+            };
+        }
         const freeUsesLeft = getFreeUsesLeft(activeService);
         const totalFreeUses = getTotalFreeUses(activeService);
         return {
@@ -125,6 +135,8 @@ const AppContent: React.FC<{
 
   const renderService = () => {
     switch (activeService) {
+      case 'landing':
+        return <LandingPage onNavigate={handleServiceChange} />;
       case 'resume':
         return <ResumeBuilder />;
       case 'scanner':
@@ -144,7 +156,7 @@ const AppContent: React.FC<{
        case 'monetization':
         return <Monetization />;
       default:
-        return <ResumeBuilder />;
+        return <LandingPage onNavigate={handleServiceChange} />;
     }
   };
 
@@ -254,7 +266,7 @@ const AppContent: React.FC<{
 
 // Stateful container component that provides context
 const App: React.FC = () => {
-    const [activeService, setActiveService] = useState<Service>('resume');
+    const [activeService, setActiveService] = useState<Service>('landing');
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     
     const handleServiceChange = (serviceId: Service) => {
