@@ -20,9 +20,9 @@ const FeatureCard: React.FC<{
 }> = ({ service, onNavigate }) => (
     <button 
         onClick={() => onNavigate(service.id as Service)}
-        className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-left hover:shadow-xl hover:border-blue-500 hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-1"
+        className="bg-white p-6 rounded-xl shadow-lg border border-gray-200/80 text-left hover:shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 group"
     >
-        <div className="bg-blue-100 text-blue-600 p-3 rounded-lg inline-block mb-4">
+        <div className="bg-blue-100 text-blue-600 p-3 rounded-lg inline-block mb-4 transition-colors duration-300 group-hover:bg-blue-600 group-hover:text-white">
             <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={service.icon} />
             </svg>
